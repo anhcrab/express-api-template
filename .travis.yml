@@ -4,7 +4,7 @@ env:
     - CC_TEST_REPORTER_ID=d5ab8047c86e1fb8f47c9c354b6cda455bf77e316003eec39d97a2d15359f10d
 matrix:
   include:
-  - node_js: '12'
+  - node_js: '18'
 cache:
   directories: [node_modules]
 install:
@@ -15,6 +15,6 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - yarn test
+  - jest --coverage --coverageReporters=text-lcov | coveralls
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESUL

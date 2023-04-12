@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
-export const testEvironmentVariable = process.env.TEST_ENV_VARIABLE
+export const testEvironmentVariable = process.env.TEST_ENV_VARIABLE;
