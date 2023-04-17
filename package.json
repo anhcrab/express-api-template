@@ -11,7 +11,8 @@
     "pretty": "prettier --write \"src/**/*.{js,jsx}\"",
     "postpretty": "yarn lint --fix",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls --reporter",
-    "coverage": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coverage": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "runQuery": "babel-node ./src/api/v1/utils/runQuery.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -20,7 +21,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jest-cli": "^29.5.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pg": "^8.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
