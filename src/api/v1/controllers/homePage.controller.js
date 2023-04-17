@@ -1,4 +1,4 @@
-import { testEvironmentVariable } from '../setting.js';
+import { testEvironmentVariable } from '../../../setting.js';
 
 class HomePageController {
   getHome(req, res) {

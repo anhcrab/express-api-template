@@ -1,9 +1,11 @@
 import express from 'express';
-import UserController from '../controllers/user.controller.js';
+import MessageController from '../controllers/message.controller.js';
+import { modifyMessage } from '../middleware/index.js';
 
-const userRouter = express.Router();
+const messageRouter = express.Router();
 
-userRouter.get('/read', UserController.getUsers);
-userRouter.get('/read/:id', UserController.getUsersById);
+messageRouter.get('/read', MessageController.getUsers);
+messageRouter.get('/read/:id', MessageController.getUserById);
+messageRouter.post('/create', modifyMessage, MessageController.saveUser)
 
-export default userRouter;
+export default messageRouter;

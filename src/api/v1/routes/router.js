@@ -1,11 +1,11 @@
 import express from 'express';
-import userRouter from './user.router.js';
-import homeRouter from './homPage.router.js';
+import messageRouter from './message.router.js';
+import homeRouter from './homePage.router.js';
 
 const indexRouter = express();
 
 indexRouter.get('/', homeRouter);
 
-indexRouter.use('/v1', userRouter);
+indexRouter.use('/v1', messageRouter);
 
 export default indexRouter;

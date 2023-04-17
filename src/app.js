@@ -1,5 +1,6 @@
 import logger from 'morgan';
 import express from 'express';
+import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import indexRouter from './api/v1/routes/router.js';
 
@@ -13,7 +14,7 @@ app.use(
     extended: true,
   })
 );
-
+app.use(cors());
 app.use(cookieParser());
 app.use('/api', indexRouter);
 

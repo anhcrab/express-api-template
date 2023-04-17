@@ -1,14 +1,22 @@
-import 
-class UserService {
-  getUsers() {};
+import Model from "../models/message.model.js";
 
-  getUsersById(id) {};
+const messagesModel = new Model('messages');
+class MessageService {
+  async getUsers() {
+    return (await messagesModel.select()).rows;
+  };
 
-  save() {};
+  async getUserById(id) {
+    return (await messagesModel.select(`id = ${id}`)).rows[0];
+  };
+
+  async save(values) {
+    return (await messagesModel.insertWithReturn('id, name, message', values));
+  };
 
   update() {};
 
   delete() {};
-}
+};
 
-export default new UserService();
+export default new MessageService();
